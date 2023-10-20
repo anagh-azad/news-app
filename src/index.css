@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #2E4374;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  background-color: #f81c1c;
+  text-align: center;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  font-style: oblique;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.card {
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  overflow: hidden; /* otherwise header image won't respect rounded corners */
+  transition: all .5s ease; /* back to normal */
+  min-height: 450px;
+  max-height: 450px;
+}
+.card:hover {
+  transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+  box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+  transition: all .4s ease; /* zoom in */
+  cursor: pointer;
+}
+
+.card-img-top{
+  width: 100%;
+  max-height: 170px;
+}
+
+.card-body{
+  background-color: aliceblue;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
