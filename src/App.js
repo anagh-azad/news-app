@@ -6,7 +6,7 @@ function App()
   const [news,setNews]=useState([]);
 
   useEffect(()=>{
-    axios.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=ee156ed1b2a34f5e854675d632b52d1e")
+    axios.get("https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=in&apikey=2f143e7e4456d085111de7e748a89272")
     .then((res)=>{
       console.log(res.data.articles);
       setNews(res.data.articles);
@@ -25,7 +25,7 @@ function App()
 
           {
             news.map((val)=>{
-              if(val.urlToImage != null)
+              if(val.image != null)
               {
               return (
 
@@ -34,7 +34,7 @@ function App()
                 
             
                   <div className="card" style={{width: "18rem"}}>
-                    <img src={val.urlToImage} className="card-img-top" alt="..."/>
+                    <img src={val.image} className="card-img-top" alt="..."/>
                     <div className="card-body">
                       <h5 className="card-title">{val.title.slice(0,70)+"..."}</h5>
                       <p className="card-text">{val.description.slice(0,150)+"..."}</p>
